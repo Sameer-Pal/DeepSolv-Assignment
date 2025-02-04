@@ -4,8 +4,6 @@ from django.http import JsonResponse
 from .models import Post
 
 
-# Create your views here.
-
 def home(request):
     # fetch_and_save()
     # groups = fetch_groups()
