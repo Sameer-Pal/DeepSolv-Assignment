@@ -1,0 +1,52 @@
+{% extends 'base/base.html' %}
+{% block content %}
+    <section class="hero is-medium is-link">
+        <div class="hero-body">
+            <p class="title">
+                Medium hero
+            </p>
+            <p class="subtitle">
+                Medium subtitle
+            </p>
+        </div>
+    </section>
+    <div class="container" style="margin-top: 50px; margin-bottom: 50px">
+        <div class="columns is-multiline">
+            {% for post in posts %}
+                <div class="column is-one-quarter">
+                    <div class="card">
+                        <div class="card-image">
+                            <figure class="image is-5by4" style="overflow: hidden">
+                                <img src="{{ post.images.first.url }}" alt="Placeholder image" style="height: auto">
+                            </figure>
+                        </div>
+                        <div class="card-content">
+                            <div class="media">
+                                <div class="media-content">
+                                    <p class="title is-5">{{ post.title }}</p>
+                                </div>
+                            </div>
+                            <div class="content is-clearfix">
+                                <p>{{ post.location }}</p>
+{#                                {% for image in post.images.all %}#}
+{#                                    <p>{{ image.url }}</p>#}
+{#                                {% endfor %}#}
+                                <p>
+                                    <span class="title is-6"><strong>{{ post.price }}</strong></span>
+                                </p>
+                            </div>
+                            <div class="card-footer btn-actions">
+                                <div class="card-footer-item field is-grouped">
+                                    <div class="buttons">
+                                        <button class="button is-primary is-small">View</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    </div>
+{% endblock %}
